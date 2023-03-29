@@ -43,9 +43,9 @@ public class Grupo {
 	}
 	
 	
-	public String obtenerIntegrante(int posicion) {
-		String integrante = null;
-		for (i = 0 ; i < )
-	}
+//	public String obtenerIntegrante(int posicion) {
+//		String integrante = null;
+//		for (i = 0 ; i < )
+//	}
 }
 
