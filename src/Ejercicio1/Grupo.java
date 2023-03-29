@@ -11,7 +11,6 @@ public class Grupo {
 		listaIntegrantes = new ArrayList<String>();
 		setNombre(nombre);
 	}
-
 	public String getNombre() {
 		return this.nombre;
 	}
@@ -35,17 +34,50 @@ public class Grupo {
 		int iIntegrante = -1;
 		while (iIntegrante == -1 && i < this.listaIntegrantes.size()) {
 			if (this.listaIntegrantes.get(i).equals(nombreIntegrante)) {
-				iIntegrante = i + 1;
+				iIntegrante = i;
 			};
 			i++;
 		}
 		return iIntegrante;
 	}
-	
-	
-//	public String obtenerIntegrante(int posicion) {
-//		String integrante = null;
-//		for (i = 0 ; i < )
-//	}
+	public String obtenerIntegrante(int posicion) {
+		String integrante = null;
+		if (posicion < this.getCantidadIntegrantes()) {
+			integrante = this.listaIntegrantes.get(posicion - 1);
+		}
+		return integrante;
+	}
+	public String buscarIntegrante(String nombre) {
+		String integranteBuscado = null;
+		int i = 0;
+		while (i < getCantidadIntegrantes() && integranteBuscado == null) {
+			if(this.listaIntegrantes.get(i).equals(integranteBuscado)) {
+				integranteBuscado = this.listaIntegrantes.get(i);
+			};
+			i++;
+		}
+		return integranteBuscado;
+	}
+	public String removerIntegrante(String nombreIntegrante) {
+		boolean removidoOk = this.listaIntegrantes.remove(buscarIntegrante(nombreIntegrante));
+		if (removidoOk) {
+			return nombreIntegrante;
+		} else {
+			return null;
+		}
+	}
+	private void mostrarIntegrantes() {
+		System.out.println("Cantidad de integrantes: " + getCantidadIntegrantes());
+		for (String integrante: this.listaIntegrantes) {
+			System.out.println(integrante);
+		}
+	}
+	public void mostrar() {
+		System.out.println(getNombre());
+		mostrarIntegrantes();
+	}
+	public void vaciar() {
+		listaIntegrantes.clear();
+	}
 }
 

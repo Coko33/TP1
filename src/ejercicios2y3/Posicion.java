@@ -10,7 +10,11 @@ public class Posicion {
 	public Posicion(int posicion) {
 		this.integrantes = new ArrayList<Atleta>();
 		this.posicion = posicion;
-		this.tiempo = (Double) null;
+		this.tiempo = 0;
+	}
+	
+	public ArrayList<Atleta> getInstegrantes() {
+		return this.integrantes;
 	}
 	
 	public void setTiempo(double tiempo) {
